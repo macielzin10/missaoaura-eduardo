@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Aura | Expedição 2089</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stars"></div>
+
+    <header class="topbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">✦</span>
+            <span>MISSÃO <strong>AURA</strong></span>
+        </a>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            SISTEMAS ONLINE
+        </div>
+
+        <span class="year">EXPEDIÇÃO // 2089</span>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    PROTOCOLO DE IDENTIFICAÇÃO
+                </span>
+
+                <h1>Descubra seu papel<br>
+                    na <span class="gradient-text">expedição.</span>
+                </h1>
+
+                <p class="hero-description">
+                    O destino de Aura depende de você.
+                    Descubra qual função combina com seu perfil
+                    e prepare-se para explorar o desconhecido.
+                </p>
+
+                <div class="hero-stats">
+                    <div>
+                        <span class="stat-number">04</span>
+                        <span class="stat-label">ETAPAS</span>
+                    </div>
+
+                    <span class="stat-divider"></span>
+
+                    <div>
+                        <span class="stat-number">02</span>
+                        <span class="stat-label">MINUTOS</span>
+                    </div>
+
+                    <span class="stat-divider"></span>
+
+                    <div>
+                        <span class="stat-number">2089</span>
+                        <span class="stat-label">ANO DA MISSÃO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="planet-scene" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="planet">
+                    <div class="planet-glow"></div>
+                    <div class="planet-surface"></div>
+                </div>
+                <div class="moon"></div>
+                <div class="rocket">
+                    <span>▲</span>
+                </div>
+                <span class="planet-label"></span>
+                <span class="planet-coordinates">18° 42' N / 04° 21' E</span>
+                <span class="scene-star star-one">✦</span>
+                <span class="scene-star star-two">✧</span>
+                <span class="scene-star star-three">·</span>
+            </div>
+        </section>
+
+        <section class="quiz-card" id="questionario">
+
+            <div class="card-topline">
+                <div>
+                    <span class="mini-label">TERMINAL DE ACESSO</span>
+                    <h2>Identificação do explorador</h2>
+                </div>
+                <span class="card-symbol">◈</span>
+            </div>
+
+            <form id="formulario">
+
+                <section id="etapa-dados" class="data-step">
+                    <p class="section-description">
+                        Antes de iniciar, precisamos registrar seus dados
+                        no sistema central da expedição.
+                    </p>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome">NOME DO EXPLORADOR</label>
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Digite seu nome completo"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nascimento">DATA DE NASCIMENTO</label>
+                            <input
+                                type="date"
+                                id="nascimento"
+                                name="nascimento"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <p class="error-message" id="mensagem-dados" role="alert"></p>
+
+                    <button type="button" class="primary-button" id="iniciar-teste">
+                        <span>INICIAR PROTOCOLO</span>
+                        <span class="button-arrow">↗</span>
+                    </button>
+
+                    <div class="security-note">
+                        <span>◈</span>
+                        REGISTRO SEGURO // AURA NETWORK
+                    </div>
+                </section>
+
+                <section id="painel-perguntas" hidden>
+
+                    <div class="progress-header">
+                        <span id="etapa-atual">ETAPA 01 / 04</span>
+                        <span id="progresso-porcentagem">25%</span>
+                    </div>
+
+                    <div
+                        class="progress-track"
+                        id="barra-progresso"
+                        role="progressbar"
+                        aria-label="Progresso do teste"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="25"
+                    >
+                        <div class="progress-fill" id="preenchimento"></div>
+                    </div>
+
+                    <div class="step-markers">
+                        <span class="marcador active">01</span>
+                        <span class="marcador">02</span>
+                        <span class="marcador">03</span>
+                        <span class="marcador">04</span>
+                    </div>
+
+                    <div class="question-list">
+
+                        <fieldset class="etapa-pergunta" data-pergunta="1" hidden>
+                            <legend>01 // PRIMEIRO CONTATO</legend>
+                            <h3>Você chega a um planeta desconhecido. Qual é sua primeira atitude?</h3>
+                            <p class="question-hint">SELECIONE UMA RESPOSTA PARA CONTINUAR</p>
+
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="1">
+                                    <span class="option-number">A</span>
+                                    <span class="option-content">
+                                        <strong>Analisar a tecnologia</strong>
+                                        <small>Investigar sistemas e equipamentos.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="2">
+                                    <span class="option-number">B</span>
+                                    <span class="option-content">
+                                        <strong>Estudar o ambiente</strong>
+                                        <small>Pesquisar a fauna, flora e os dados.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="3">
+                                    <span class="option-number">C</span>
+                                    <span class="option-content">
+                                        <strong>Explorar o território</strong>
+                                        <small>Descobrir o que existe além da base.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q1" value="4">
+                                    <span class="option-number">D</span>
+                                    <span class="option-content">
+                                        <strong>Organizar a equipe</strong>
+                                        <small>Definir prioridades e avaliar riscos.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="etapa-pergunta" data-pergunta="2" hidden>
+                            <legend>02 // DESAFIO OPERACIONAL</legend>
+                            <h3>Uma falha ameaça a missão. Como você reage?</h3>
+                            <p class="question-hint">SELECIONE UMA RESPOSTA PARA CONTINUAR</p>
+
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="q2" value="1">
+                                    <span class="option-number">A</span>
+                                    <span class="option-content">
+                                        <strong>Reparar o sistema</strong>
+                                        <small>Encontrar a falha e corrigir o problema.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q2" value="2">
+                                    <span class="option-number">B</span>
+                                    <span class="option-content">
+                                        <strong>Investigar a causa</strong>
+                                        <small>Reunir dados antes de agir.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q2" value="3">
+                                    <span class="option-number">C</span>
+                                    <span class="option-content">
+                                        <strong>Verificar pessoalmente</strong>
+                                        <small>Ir até o local para avaliar a situação.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q2" value="4">
+                                    <span class="option-number">D</span>
+                                    <span class="option-content">
+                                        <strong>Coordenar a resposta</strong>
+                                        <small>Distribuir tarefas e reduzir os riscos.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="etapa-pergunta" data-pergunta="3" hidden>
+                            <legend>03 // PERFIL DE EXPLORAÇÃO</legend>
+                            <h3>Qual atividade mais combina com você?</h3>
+                            <p class="question-hint">SELECIONE UMA RESPOSTA PARA CONTINUAR</p>
+
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="q3" value="1">
+                                    <span class="option-number">A</span>
+                                    <span class="option-content">
+                                        <strong>Criar soluções</strong>
+                                        <small>Construir e aperfeiçoar tecnologias.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q3" value="2">
+                                    <span class="option-number">B</span>
+                                    <span class="option-content">
+                                        <strong>Descobrir respostas</strong>
+                                        <small>Pesquisar e compreender fenômenos.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q3" value="3">
+                                    <span class="option-number">C</span>
+                                    <span class="option-content">
+                                        <strong>Viver novas experiências</strong>
+                                        <small>Explorar lugares e superar desafios.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q3" value="4">
+                                    <span class="option-number">D</span>
+                                    <span class="option-content">
+                                        <strong>Planejar o futuro</strong>
+                                        <small>Conectar ideias e tomar decisões.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="etapa-pergunta" data-pergunta="4" hidden>
+                            <legend>04 // DECISÃO FINAL</legend>
+                            <h3>O que você considera essencial para o sucesso da missão?</h3>
+                            <p class="question-hint">ESCOLHA SUA ÚLTIMA RESPOSTA</p>
+
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="q4" value="1">
+                                    <span class="option-number">A</span>
+                                    <span class="option-content">
+                                        <strong>Engenharia avançada</strong>
+                                        <small>Equipamentos confiáveis e inovação.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q4" value="2">
+                                    <span class="option-number">B</span>
+                                    <span class="option-content">
+                                        <strong>Conhecimento científico</strong>
+                                        <small>Dados e descobertas importantes.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q4" value="3">
+                                    <span class="option-number">C</span>
+                                    <span class="option-content">
+                                        <strong>Coragem para explorar</strong>
+                                        <small>Iniciativa para descobrir novos caminhos.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+
+                                <label class="option-card">
+                                    <input type="radio" name="q4" value="4">
+                                    <span class="option-number">D</span>
+                                    <span class="option-content">
+                                        <strong>Estratégia e cooperação</strong>
+                                        <small>Uma equipe preparada para qualquer cenário.</small>
+                                    </span>
+                                    <span class="option-check">↗</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                    <p class="error-message" id="mensagem-pergunta" role="alert"></p>
+
+                    <div class="question-navigation">
+                        <button type="button" class="secondary-button" id="voltar">
+                            ← VOLTAR
+                        </button>
+
+                        <button type="button" class="primary-button" id="avancar">
+                            <span>PRÓXIMA ETAPA</span>
+                            <span class="button-arrow">↗</span>
+                        </button>
+
+                        <button type="button" class="primary-button" id="finalizar" hidden>
+                            <span>REVELAR MEU PERFIL</span>
+                            <span class="button-arrow">✦</span>
+                        </button>
+                    </div>
+
+                </section>
+            </form>
+        </section>
+
+        <section id="resultado" class="result-card" hidden>
+            <div class="result-topline">
+                <span class="eyebrow">ARQUIVO DA EXPEDIÇÃO</span>
+                <span class="file-status"><span class="status-dot"></span> PERFIL CONFIRMADO</span>
+            </div>
+
+            <div class="result-main">
+                <div class="result-image-wrap">
+                    <span class="image-corner top-left"></span>
+                    <span class="image-corner top-right"></span>
+                    <img id="imagem-perfil" src="imagem/perfil-1.jpg" alt="Imagem do perfil de explorador">
+                    <span class="image-code"> // CLASSIFIED</span>
+                </div>
+
+                <div class="result-info">
+                    <p class="mini-label" id="categoria">CLASSE DE EXPLORADOR</p>
+                    <h2 id="nome-perfil">Seu perfil</h2>
+                    <p id="saudacao" class="result-greeting"></p>
+                    <p id="descricao-perfil" class="result-description"></p>
+
+                    <div class="result-details">
+                        <div class="detail-box">
+                            <span>ESPECIALIDADE</span>
+                            <strong id="especialidade-perfil"></strong>
+                        </div>
+
+                        <div class="detail-box">
+                            <span>MISSÃO RECOMENDADA</span>
+                            <strong id="missao-perfil"></strong>
+                        </div>
+                    </div>
+
+                    <p id="idade-perfil" class="age-note"></p>
+                </div>
+            </div>
+
+            <div class="recommendation">
+                <span class="recommendation-icon">✦</span>
+                <div>
+                    <span class="mini-label">DIRETRIZ DA CENTRAL</span>
+                    <p id="recomendacao-perfil"></p>
+                </div>
+            </div>
+
+            <p id="texto-final" class="final-message"></p>
+
+            <div class="result-footer">
+                <span id="codigo-arquivo">ARQUIVO // </span>
+
+                <div class="result-actions">
+                    <button type="button" class="secondary-button" id="copiar-resultado">
+                        ⧉ COPIAR RESULTADO
+                    </button>
+
+                    <button type="button" class="primary-button" id="refazer">
+                        REFAZER TESTE ↻
+                    </button>
+                </div>
+            </div>
+
+            <p id="mensagem-copia" class="copy-message" aria-live="polite"></p>
+            <textarea id="texto-copiar" class="copy-buffer" aria-hidden="true" tabindex="-1"></textarea>
+        </section>
+
+        <footer class="footer">
+            <span>© 2089 AURA NETWORK</span>
+            <span>EXPLORANDO O DESCONHECIDO <span class="footer-star">✦</span></span>
+            <span>PROTOCOLO 67.09</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
